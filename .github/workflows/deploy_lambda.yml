@@ -29,5 +29,5 @@ jobs:
           ls -la
           zip -j deploy.zip ./src/*
           zip -r package.zip ./aws-sdk/
-          aws lambda publish-layer-version --layer-name node_sdk --description "My layer" --zip-file fileb://../package.zip
+          aws lambda publish-layer-version --layer-name node_sdk --description "My layer" --zip-file fileb://package.zip
           aws lambda update-function-code --function-name=EC2_Stop_Start --zip-file=fileb://deploy.zip
