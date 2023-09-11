@@ -21,6 +21,8 @@ jobs:
       - name: deploy
         if:
         run: |
+          ls -la
           npm install aws-sdk --save
+          ls -la
           zip -j deploy.zip ./src/* ./aws-sdk/*
           aws lambda update-function-code --function-name=EC2_Stop_Start --zip-file=fileb://deploy.zip
